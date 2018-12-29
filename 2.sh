@@ -1,1 +1,0 @@
-gcc -g filler.c filler.h pars_map.c worck_with_figur.c printf/libftprintf.a printf/libft/libft.a
