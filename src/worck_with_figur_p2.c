@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   worck_with_figur.c                                 :+:      :+:    :+:   */
+/*   worck_with_figur_p2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/26 19:31:47 by amazhara          #+#    #+#             */
-/*   Updated: 2018/12/29 21:30:15 by amazhara         ###   ########.fr       */
+/*   Created: 2018/12/29 21:06:07 by amazhara          #+#    #+#             */
+/*   Updated: 2018/12/29 21:50:31 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-int		manhattan_distance(t_filler *f, int mx, int my)
+int		manhattan_distance_p2(t_filler *f, int mx, int my)
 {
 	int		new;
 	int		check;
@@ -25,7 +25,7 @@ int		manhattan_distance(t_filler *f, int mx, int my)
 	while (f->map[++y] && (x = -1))
 		while (f->map[y][++x])
 		{
-			if (f->map[y][x] == 'x' || f->map[y][x] == 'X')
+			if (f->map[y][x] == 'o' || f->map[y][x] == 'O')
 				check = ft_modul(mx, x) + ft_modul(my, y);
 			if (check < new || new == 0)
 				new = check;
@@ -40,17 +40,17 @@ int		manhattan_distance(t_filler *f, int mx, int my)
 	return (false);
 }
 
-int		check_include_continue(t_filler *f, int check, int uncheck)
+int		check_include_continue_p2(t_filler *f, int check, int uncheck)
 {
 	if (check == 1 && uncheck == 0 &&
-		manhattan_distance(f, f->hold[1], f->hold[0]))
+		manhattan_distance_p2(f, f->hold[1], f->hold[0]))
 		return (true);
 	f->hold[0] = 0;
 	f->hold[1] = 0;
 	return (false);
 }
 
-int		check_include(t_filler *f, t_coord *c)
+int		check_include_p2(t_filler *f, t_coord *c)
 {
 	int	x;
 	int	y;
@@ -66,20 +66,20 @@ int		check_include(t_filler *f, t_coord *c)
 	while (f->fig[++y] && (x = -1))
 		while (f->fig[y][++x])
 		{
-			if (f->fig[y][x] == '*' && (f->map[c->y + y][c->x + x] == 'O'
-			|| f->map[c->y + y][c->x + x] == 'o'))
+			if (f->fig[y][x] == '*' && (f->map[c->y + y][c->x + x] == 'X'
+			|| f->map[c->y + y][c->x + x] == 'x'))
 			{
 				f->hold[0] = c->y;
 				f->hold[1] = c->x;
 				check += 1;
 			}
-			f->fig[y][x] == '*' && (f->map[c->y + y][c->x + x] == 'x'
-			|| f->map[c->y + y][c->x + x] == 'X') ? ++uncheck : false;
+			f->fig[y][x] == '*' && (f->map[c->y + y][c->x + x] == 'o'
+			|| f->map[c->y + y][c->x + x] == 'O') ? ++uncheck : false;
 		}
-	return (check_include_continue(f, check, uncheck));
+	return (check_include_continue_p2(f, check, uncheck));
 }
 
-void	worck_with_figur(t_filler *f)
+void	worck_with_figur_p2(t_filler *f)
 {
 	t_coord	c;
 
@@ -89,7 +89,7 @@ void	worck_with_figur(t_filler *f)
 	{
 		c.x = -1;
 		while (f->map[c.y][++c.x])
-			check_include(f, &c);
+			check_include_p2(f, &c);
 	}
 	f->hold[0] = 0;
 	f->hold[0] = 0;

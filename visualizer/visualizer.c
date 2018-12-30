@@ -6,7 +6,7 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:37:51 by azavrazh          #+#    #+#             */
-/*   Updated: 2018/12/29 17:36:30 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:05:21 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static inline void		visualize_piece(t_map *m)
 	const int	width = m->mc.x / 2;
 
 	if (m->p == NULL)
-		m->p = newwin(height, width, 2, COLS / 2 + m->mc.x);
+		m->p = newwin(height, width, 0, COLS / 2 + m->mc.x);
 	clear_window(m->p, height, width);
 	y = -1;
 	while (m->piece[++y])
@@ -82,7 +82,7 @@ static inline void		visualize_map(t_map *m)
 	int			y;
 
 	if (m->m == NULL)
-		m->m = newwin(m->mc.y, m->mc.x * 2, 2, COLS / 2 - m->mc.x);
+		m->m = newwin(m->mc.y, m->mc.x * 2, 0, COLS / 2 - m->mc.x);
 	y = -1;
 	while (m->map[++y])
 	{
