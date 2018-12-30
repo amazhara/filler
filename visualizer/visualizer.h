@@ -6,7 +6,7 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 21:55:12 by azavrazh          #+#    #+#             */
-/*   Updated: 2018/12/30 14:03:10 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:36:34 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ typedef struct	s_coordinates
 
 typedef struct	s_map
 {
-	t_coo	mc;
-	char	**map;
-	t_coo	pc;
-	char	**piece;
-	t_coo	fin;
-	char	*o;
-	char	*x;
+	t_coo		mc;
+	char		**map;
+	t_coo		pc;
+	char		**piece;
+	t_coo		fin;
+	char		*o;
+	char		*x;
 
-	WINDOW	*m;
-	WINDOW	*p;
+	WINDOW		*m;
+	WINDOW		*p;
 
 }				t_map;
 
-enum	pcolors
+enum			e_pcolors
 {
 	P1 = 10,
 	P2,
@@ -49,6 +49,7 @@ enum	pcolors
 };
 
 void			init_vis(t_map *m);
+void			print_winner(t_map *m);
 void			input_plat1(char *line, t_map *m);
 void			input_piece1(char *line, t_map *m);
 

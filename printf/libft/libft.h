@@ -6,7 +6,7 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 10:00:46 by amazhara          #+#    #+#             */
-/*   Updated: 2018/12/29 13:11:02 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:24:56 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@
 # include <stdbool.h>
 
 typedef __int128_t	t_bzero_padd;
-
-/*
-** 
-*/
 
 typedef struct		s_list
 {

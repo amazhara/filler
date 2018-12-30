@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/30 14:25:06 by amazhara          #+#    #+#             */
+/*   Updated: 2018/12/30 14:25:51 by amazhara         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # define BUFF_SIZE 128
 # include <sys/types.h>

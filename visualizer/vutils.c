@@ -6,11 +6,20 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 05:25:21 by vbrazas           #+#    #+#             */
-/*   Updated: 2018/12/30 14:04:16 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:36:59 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "visualizer.h"
+
+void		print_winner(t_map *m)
+{
+	ft_putstr("Player \'");
+	ft_putchar((m->fin.x > m->fin.y) ? 'X' : 'O');
+	ft_putstr("\' win!!!\nWith ");
+	ft_putnbr((m->fin.x > m->fin.y) ? m->fin.x : m->fin.y);
+	ft_putstr(" win points\n");
+}
 
 void		input_plat1(char *line, t_map *m)
 {

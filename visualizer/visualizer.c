@@ -6,13 +6,13 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:37:51 by azavrazh          #+#    #+#             */
-/*   Updated: 2018/12/30 14:05:21 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:37:31 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "visualizer.h"
 
-static inline void		clear_window(WINDOW *w, int height, int width)
+static void		clear_window(WINDOW *w, int height, int width)
 {
 	int			y;
 	int			x;
@@ -31,7 +31,7 @@ static inline void		clear_window(WINDOW *w, int height, int width)
 	}
 }
 
-static inline void		print_the_dot(WINDOW *w, char mp)
+static void		print_the_dot(WINDOW *w, char mp)
 {
 	if (mp == 'o' || mp == 'O')
 		wattron(w, COLOR_PAIR(P1));
@@ -52,7 +52,7 @@ static inline void		print_the_dot(WINDOW *w, char mp)
 		wattroff(w, COLOR_PAIR(NEU));
 }
 
-static inline void		visualize_piece(t_map *m)
+static void		visualize_piece(t_map *m)
 {
 	int			y;
 	int			x;
@@ -76,7 +76,7 @@ static inline void		visualize_piece(t_map *m)
 	wrefresh(m->p);
 }
 
-static inline void		visualize_map(t_map *m)
+static void		visualize_map(t_map *m)
 {
 	int			x;
 	int			y;
@@ -98,16 +98,7 @@ static inline void		visualize_map(t_map *m)
 	usleep(30000);
 }
 
-static inline void		print_winner(t_map *m)
-{
-	ft_putstr("Player \'");
-	ft_putchar((m->fin.x > m->fin.y) ? 'X' : 'O');
-	ft_putstr("\' win!!!\nWith ");
-	ft_putnbr((m->fin.x > m->fin.y) ? m->fin.x : m->fin.y);
-	ft_putstr(" win points\n");
-}
-
-int						main(void)
+int				main(void)
 {
 	t_map	m;
 	char	*line;

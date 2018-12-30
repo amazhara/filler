@@ -6,16 +6,11 @@
 /*   By: amazhara <amazhara@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 15:12:30 by amazhara          #+#    #+#             */
-/*   Updated: 2018/12/30 14:01:03 by amazhara         ###   ########.fr       */
+/*   Updated: 2018/12/30 14:32:12 by amazhara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-// void	choose_player(t_filler *f)
-// {
-
-// }
 
 void	continue_malloc_f_m(t_filler *f, int x, int y)
 {
